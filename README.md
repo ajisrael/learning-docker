@@ -161,4 +161,23 @@ You can then run the new image as you would any other:
 docker run helloworld
 ```
 
+### Push an image to docker hub
+
+Once you've built an image locally, you can push after loging into the corresponding registry.
+
+Login with the following command and complete the prompts that follow:
+
+```bash
+docker login
+```
+
+You can also pass the username and password into the command with `--username` and `--password`
+
+After logging in, you can push a local image with the following command:
+
+```bash
+docker push <image_name>
+```
+
+You will want to make sure that you prefix the image with your username followed by a `/`, then the image name when naming the image.
 
