@@ -56,3 +56,21 @@ _Note: to leave simply use the `exit` command_
 ```bash
 docker stats
 ```
+
+### Create a volume
+
+```bash
+docker volume create <volume_name>
+```
+
+### List volumes
+
+```bash
+docker volume ls
+```
+
+### Inspect a volume
+
+```bash
+docker volume inspect <volume_name>
+```
