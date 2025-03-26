@@ -49,7 +49,7 @@ docker exec -it <CONTAINER_ID> /bin/sh
 - `-t` gives us a tty (keyboard) interface
 - `/bin/sh` is the path to the command we're running. After all, a command line shell is just a program. sh is a more basic version of bash.
 
-__ Note: to leave simply use the `exit` command __  
+_Note: to leave simply use the `exit` command_  
 
 ### Get stats of containers
 
