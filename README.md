@@ -17,6 +17,10 @@ instead of running on emulated hardware from a hypervisor.
 
 Volumes allow us to have "persistent state" for a container. Otherwise containers are considered "stateless."
 
+### Bridge Network
+
+An internal network that allows for communication betwen containers without accessing the open internet
+
 ## Commands
 
 ### See local images
@@ -31,9 +35,13 @@ docker images
 docker run -d -p <host_port>:<container_port> <image>
 ```
 
+- `-d` runs the container in "detatched" mode, so it doesn't take over your current terminal
 - `-e` sets environment variables
 - `-v` binds container directories to volumes. `<volume_name>:<container_path>`
     - This will create the volume if it doesn't exist
+    - You can use a path on your machine as the volume name as well. So `$PWD/some_file.txt:/bin/config/config.txt` would copy `some_file.txt` in the current directory to `config.txt` in the container
+- `--network` will attach the container to a network
+- `--name` will allow you to assign a name to the container
 
 ### List running containers
 
@@ -109,4 +117,16 @@ docker volume inspect <volume_name>
 
 ```bash
 docker volume rm <volume_name>
+```
+
+### Create a bridge network
+
+```bash
+docker network create <network_name>
+```
+
+### List networks
+
+```bash
+docker network ls
 ```
