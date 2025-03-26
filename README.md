@@ -1,5 +1,22 @@
 # learning-docker
 
+## Terms
+
+### Image
+
+An image is a read only definition of a container
+
+### Container
+
+A virtualized read-write environment
+
+Containers are different from VMs in that they are virtualized on top of the hosts operating system,
+instead of running on emulated hardware from a hypervisor.
+
+### Volume
+
+Volumes allow us to have "persistent state" for a container. Otherwise containers are considered "stateless."
+
 ## Commands
 
 ### List running containers
