@@ -57,6 +57,12 @@ _Note: to leave simply use the `exit` command_
 docker stats
 ```
 
+### Restart container
+
+```bash
+docker restart <CONTAINER_ID>
+```
+
 ### Create a volume
 
 ```bash
