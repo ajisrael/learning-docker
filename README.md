@@ -4,11 +4,11 @@
 
 ### Image
 
-An image is a read only definition of a container
+An image is a read only definition of a container.
 
 ### Container
 
-A virtualized read-write environment
+A virtualized read-write environment.
 
 Containers are different from VMs in that they are virtualized on top of the hosts operating system,
 instead of running on emulated hardware from a hypervisor.
@@ -19,7 +19,11 @@ Volumes allow us to have "persistent state" for a container. Otherwise container
 
 ### Bridge Network
 
-An internal network that allows for communication betwen containers without accessing the open internet
+An internal network that allows for communication betwen containers without accessing the open internet.
+
+### Dockerfile
+
+A file that lists instructions for how to build an image.
 
 ## Commands
 
@@ -134,3 +138,27 @@ docker network create <network_name>
 ```bash
 docker network ls
 ```
+
+### Build an image from a Dockerfile
+ 
+```bash
+docker build . -t <image_name>:(version)
+```
+
+This will use a `Dockerfile` located in the current directory to create an image with `image_name`. Usually you would specify the `version` as `latest` if you do specify it at all as this is optional.
+
+For example:
+
+```bash
+docker build . -t helloworld:latest
+```
+
+This creates an image called `helloworld` with the `latest` tag.
+
+You can then run the new image as you would any other:
+
+```bash
+docker run helloworld
+```
+
+
