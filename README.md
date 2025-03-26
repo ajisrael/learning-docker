@@ -181,3 +181,16 @@ docker push <image_name>
 
 You will want to make sure that you prefix the image with your username followed by a `/`, then the image name when naming the image.
 
+The best practice when pushing an image is to use semantic versioning on all your images, and also push to the "latest" tag. 
+
+You can buld and push for multiple tags with the following commands:
+```bash
+docker build -t username/imagename:0.0.0 -t username/imagename:latest .
+docker push username/imagename --all-tags
+```
+
+### Pull an image from a repository
+
+```bash
+docker pull <image_name>
+```
