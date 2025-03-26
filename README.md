@@ -36,12 +36,16 @@ docker run -d -p <host_port>:<container_port> <image>
 ```
 
 - `-d` runs the container in "detatched" mode, so it doesn't take over your current terminal
+- `-p` applies port forwarding from the `host_port` into the `container_port`, thereby exposing the container for external access
 - `-e` sets environment variables
 - `-v` binds container directories to volumes. `<volume_name>:<container_path>`
     - This will create the volume if it doesn't exist
     - You can use a path on your machine as the volume name as well. So `$PWD/some_file.txt:/bin/config/config.txt` would copy `some_file.txt` in the current directory to `config.txt` in the container
 - `--network` will attach the container to a network
+    - When specifying a network you would only use `-p` for anything that you would want to be an entrypoint into the network. For example, an application load balancer.
 - `--name` will allow you to assign a name to the container
+    - Once you've specified a name for the container you can run it again by using just the name: `docker run <container_name>`
+    - This will also map to the host name of the container for the bridge network that it is in.
 
 ### List running containers
 
