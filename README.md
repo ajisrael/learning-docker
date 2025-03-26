@@ -19,11 +19,29 @@ Volumes allow us to have "persistent state" for a container. Otherwise container
 
 ## Commands
 
+### See local images
+
+```bash
+docker images
+```
+
+### Start a container
+
+```bash
+docker run -d -p <host_port>:<container_port> <image>
+```
+
+- `-e` sets environment variables
+- `-v` binds container directories to volumes. `<volume_name>:<container_path>`
+    - This will create the volume if it doesn't exist
+
 ### List running containers
 
 ```bash
 docker ps
 ```
+
+You can add a `-a` to the end to see all containers (running or not)
 
 ### Execute a command on a running container
 
@@ -63,6 +81,12 @@ docker stats
 docker restart <CONTAINER_ID>
 ```
 
+### Remove container
+
+```bash
+docker rm <CONTAINER_ID>
+```
+
 ### Create a volume
 
 ```bash
@@ -79,4 +103,10 @@ docker volume ls
 
 ```bash
 docker volume inspect <volume_name>
+```
+
+### Remove a volume
+
+```bash
+docker volume rm <volume_name>
 ```
